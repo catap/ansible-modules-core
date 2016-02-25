@@ -390,6 +390,7 @@ def create_virtual_machine(module, azure):
         network_config.configuration_set_type = 'NetworkConfiguration'
         network_config.subnet_names = []
         network_config.public_ips = None
+        network_config.static_virtual_network_ip_address = None
         for port in endpoints:
             network_config.input_endpoints.append(ConfigurationSetInputEndpoint(name='TCP-%s' % port,
                                                                                 protocol='TCP',
